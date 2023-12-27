@@ -2,9 +2,8 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "Engine/DataAsset.h"
 #include "GameplayTagContainer.h"
-#include "UObject/Object.h"
 #include "InputConfig.generated.h"
 
 class UInputAction;
@@ -14,13 +13,11 @@ class UInputAction;
  * @see https://github.com/EpicGames/UnrealEngine/blob/072300df18a94f18077ca20a14224b5d99fee872/Samples/Games/Lyra/Source/LyraGame/Input/LyraInputConfig.h
  */
 UCLASS(BlueprintType, Const)
-class INPUT_API UInputConfig : public UObject
+class INPUT_API UInputConfig : public UDataAsset
 {
 	GENERATED_BODY()
 
 public:
-	UInputConfig();
-
 	/** Maps a gameplay tag to an input action */ 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputAction"))
 	TMap<FGameplayTag, TObjectPtr<const UInputAction>> TaggedInputActions; 
