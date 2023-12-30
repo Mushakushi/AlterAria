@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
 #include "Components/PawnComponent.h"
 #include "Logging/LogMacros.h"
 #include "BaseCharacterComponent.generated.h"
