@@ -4,8 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/PawnComponent.h"
 #include "Logging/LogMacros.h"
-#include "BaseCharacter.generated.h"
+#include "BaseCharacterComponent.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -14,7 +15,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ABaseCharacter : public ACharacter
+class UBaseCharacterComponent : public UPawnComponent
 {
 	GENERATED_BODY()
 
@@ -27,7 +28,7 @@ class ABaseCharacter : public ACharacter
 	UCameraComponent* FollowCamera;
 
 public:
-	ABaseCharacter();
+	UBaseCharacterComponent();
 	
 	/**
 	 * Moves the character. Called for movement input

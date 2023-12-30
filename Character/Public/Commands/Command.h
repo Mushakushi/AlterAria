@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Command.generated.h"
 
-class ABaseCharacter; 
+class UBaseCharacterComponent; 
 
 /**
  * 	A command object that acts upon a player. 
@@ -18,7 +18,7 @@ class CHARACTER_API UCommand : public UObject
 public:
 	/** Controlled character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	ABaseCharacter* Target;
+	UBaseCharacterComponent* Target;
 	
 	/** Executes this command. */
 	UFUNCTION(BlueprintCallable)

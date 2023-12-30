@@ -7,7 +7,7 @@
 #include "UObject/Object.h"
 #include "LookCommand.generated.h"
 
-class ABaseCharacter; 
+class UBaseCharacterComponent; 
 
 /**
  * A command that makes a target character move. 
@@ -30,7 +30,7 @@ public:
 	 * @param Vector The direction to move. 
 	 */
 	UFUNCTION()
-	void Initialize(ABaseCharacter* Character, const FVector2D& Vector);
+	void Initialize(UBaseCharacterComponent* Character, const FVector2D& Vector);
 
 	/** Executes the command. */
 	virtual void Execute() override;

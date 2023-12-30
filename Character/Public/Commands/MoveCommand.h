@@ -7,7 +7,7 @@
 #include "UObject/Object.h"
 #include "MoveCommand.generated.h"
 
-class ABaseCharacter; 
+class UBaseCharacterComponent; 
 
 /**
  * A command that makes a target character move. 
@@ -29,7 +29,7 @@ public:
 	 * @param Character The target character. 
 	 * @param Vector The direction to move. 
 	 */
-	void Initialize(ABaseCharacter* Character, const FVector2D& Vector);
+	void Initialize(UBaseCharacterComponent* Character, const FVector2D& Vector);
 	
 	virtual void Execute() override;
 };

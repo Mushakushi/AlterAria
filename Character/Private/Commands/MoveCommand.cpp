@@ -2,14 +2,14 @@
 
 
 #include "Commands/MoveCommand.h"
-#include "BaseCharacter.h"
+#include "..\..\Public\BaseCharacterComponent.h"
 
 UMoveCommand::UMoveCommand()
 {
 	MovementVector = FVector2D();
 }
 
-void UMoveCommand::Initialize(ABaseCharacter* Character, const FVector2D& Vector)
+void UMoveCommand::Initialize(UBaseCharacterComponent* Character, const FVector2D& Vector)
 {
 	Target = Character;
 	MovementVector = Vector; 

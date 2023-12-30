@@ -1,7 +1,7 @@
 // Copyright (c) 2024, Matthew Brown. All rights reserved.
 
 
-#include "BaseCharacter.h"
+#include "..\Public\BaseCharacterComponent.h"
 #include "Engine/LocalPlayer.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -11,7 +11,7 @@
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
-ABaseCharacter::ABaseCharacter()
+UBaseCharacterComponent::UBaseCharacterComponent()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -49,7 +49,7 @@ ABaseCharacter::ABaseCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
-void ABaseCharacter::Move(const FVector2d& MovementVector)
+void UBaseCharacterComponent::Move(const FVector2d& MovementVector)
 {
 	if (Controller != nullptr)
 	{
@@ -69,7 +69,7 @@ void ABaseCharacter::Move(const FVector2d& MovementVector)
 	}
 }
 
-void ABaseCharacter::Look(const FVector2d& LookAxisVector)
+void UBaseCharacterComponent::Look(const FVector2d& LookAxisVector)
 {
 	if (Controller != nullptr)
 	{

@@ -2,13 +2,13 @@
 
 
 #include "Commands/StartJumpingCommand.h"
-#include "BaseCharacter.h"
+#include "..\..\Public\BaseCharacterComponent.h"
 
 UStartJumpingCommand::UStartJumpingCommand()
 {
 }
 
-void UStartJumpingCommand::Initialize(ABaseCharacter* Character)
+void UStartJumpingCommand::Initialize(UBaseCharacterComponent* Character)
 {
 	Target = Character; 
 }

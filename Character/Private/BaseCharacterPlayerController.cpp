@@ -2,7 +2,7 @@
 
 
 #include "BaseCharacterPlayerController.h"
-#include "BaseCharacter.h"
+#include "..\Public\BaseCharacterComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Commands/StartJumpingCommand.h"
@@ -16,7 +16,7 @@ class UEnhancedInputLocalPlayerSubsystem;
 ABaseCharacterPlayerController::ABaseCharacterPlayerController()
 {
 	PrimaryActorTick.bCanEverTick = false;
-	if (ABaseCharacter* OwnerCharacter = Cast<ABaseCharacter>(GetOwner()); OwnerCharacter != nullptr)
+	if (UBaseCharacterComponent* OwnerCharacter = Cast<UBaseCharacterComponent>(GetOwner()); OwnerCharacter != nullptr)
 	{
 		Target = OwnerCharacter;
 	}
