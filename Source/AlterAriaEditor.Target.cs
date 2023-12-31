@@ -16,6 +16,6 @@ public class AlterAriaEditorTarget : TargetRules
 
 	private void RegisterModulesCreatedByRider()
 	{
-		ExtraModuleNames.AddRange(new string[] { "Character", "Input" });
+		ExtraModuleNames.AddRange(new string[] { "Character", "Input", "Player" });
 	}
 }
