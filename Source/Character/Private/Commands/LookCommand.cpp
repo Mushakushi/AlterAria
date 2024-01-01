@@ -9,7 +9,7 @@ ULookCommand::ULookCommand()
 	LookAxisVector = FVector2D(); 
 }
 
-void ULookCommand::Initialize(UBaseCharacterComponent* Character, const FVector2D& Vector)
+void ULookCommand::Initialize(ABaseCharacterComponent* Character, const FVector2D& Vector)
 {
 	Target = Character;
 	LookAxisVector = Vector; 

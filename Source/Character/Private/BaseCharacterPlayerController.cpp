@@ -16,7 +16,7 @@ class UEnhancedInputLocalPlayerSubsystem;
 ABaseCharacterPlayerController::ABaseCharacterPlayerController()
 {
 	PrimaryActorTick.bCanEverTick = false;
-	if (UBaseCharacterComponent* OwnerCharacter = Cast<UBaseCharacterComponent>(GetOwner()); OwnerCharacter != nullptr)
+	if (ABaseCharacterComponent* OwnerCharacter = Cast<ABaseCharacterComponent>(GetOwner()); OwnerCharacter != nullptr)
 	{
 		Target = OwnerCharacter;
 	}

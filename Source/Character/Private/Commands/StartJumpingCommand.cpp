@@ -8,7 +8,7 @@ UStartJumpingCommand::UStartJumpingCommand()
 {
 }
 
-void UStartJumpingCommand::Initialize(UBaseCharacterComponent* Character)
+void UStartJumpingCommand::Initialize(ABaseCharacterComponent* Character)
 {
 	Target = Character; 
 }

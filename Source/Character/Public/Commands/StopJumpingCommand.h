@@ -23,7 +23,7 @@ public:
 	 * @param Character The target character. 
 	 */
 	UFUNCTION()
-	void Initialize(UBaseCharacterComponent* Character);
+	void Initialize(ABaseCharacterComponent* Character);
 
 	/** Executes the command. */
 	virtual void Execute() override;

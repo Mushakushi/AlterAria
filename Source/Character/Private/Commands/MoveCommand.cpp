@@ -9,7 +9,7 @@ UMoveCommand::UMoveCommand()
 	MovementVector = FVector2D();
 }
 
-void UMoveCommand::Initialize(UBaseCharacterComponent* Character, const FVector2D& Vector)
+void UMoveCommand::Initialize(ABaseCharacterComponent* Character, const FVector2D& Vector)
 {
 	Target = Character;
 	MovementVector = Vector; 
