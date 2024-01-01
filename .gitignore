@@ -36,3 +36,7 @@ SOFTWARE.
 !/Source/**
 !/Config/**
 !/Plugins/**
+
+# Ignore plugin binaries and intermediate 
+/Plugins/**/Binaries
+/Plugins/**/Intermediate
