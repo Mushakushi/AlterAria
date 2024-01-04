@@ -9,7 +9,7 @@ public class Player : ModuleRules
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
-                "Core",
+                "Core", "CommonGame",
             }
         );
 

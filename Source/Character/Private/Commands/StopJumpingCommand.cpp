@@ -2,13 +2,13 @@
 
 
 #include "Commands/StopJumpingCommand.h"
-#include "..\..\Public\BaseCharacterComponent.h"
+#include "..\..\Public\BaseCharacter.h"
 
 UStopJumpingCommand::UStopJumpingCommand()
 {
 }
 
-void UStopJumpingCommand::Initialize(ABaseCharacterComponent* Character)
+void UStopJumpingCommand::Initialize(ABaseCharacter* Character)
 {
 	Target = Character; 
 }

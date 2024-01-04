@@ -6,7 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "BaseCharacterPlayerController.generated.h"
 
-class ABaseCharacterComponent;
+class ABaseCharacter;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
@@ -37,7 +37,7 @@ public:
 
 	/** Controlled character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Commands")
-	ABaseCharacterComponent* Target;
+	ABaseCharacter* Target;
 
 protected:
 	/** Called for movement input */

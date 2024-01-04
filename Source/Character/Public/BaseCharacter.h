@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "ModularCharacter.h"
 #include "Logging/LogMacros.h"
-#include "BaseCharacterComponent.generated.h"
+#include "BaseCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -14,7 +14,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ABaseCharacterComponent : public AModularCharacter
+class ABaseCharacter : public AModularCharacter
 {
 	GENERATED_BODY()
 
@@ -27,7 +27,7 @@ class ABaseCharacterComponent : public AModularCharacter
 	UCameraComponent* FollowCamera;
 
 public:
-	ABaseCharacterComponent();
+	ABaseCharacter();
 	
 	/**
 	 * Moves the character. Called for movement input

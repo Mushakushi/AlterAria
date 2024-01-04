@@ -2,14 +2,14 @@
 
 
 #include "Commands/LookCommand.h"
-#include "..\..\Public\BaseCharacterComponent.h"
+#include "..\..\Public\BaseCharacter.h"
 
 ULookCommand::ULookCommand()
 {
 	LookAxisVector = FVector2D(); 
 }
 
-void ULookCommand::Initialize(ABaseCharacterComponent* Character, const FVector2D& Vector)
+void ULookCommand::Initialize(ABaseCharacter* Character, const FVector2D& Vector)
 {
 	Target = Character;
 	LookAxisVector = Vector; 
