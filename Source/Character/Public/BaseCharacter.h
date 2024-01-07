@@ -2,13 +2,13 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "ModularCharacter.h"
 #include "Logging/LogMacros.h"
 #include "BaseCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
+class ABaseCharacterPlayerController; 
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
@@ -28,6 +28,14 @@ class ABaseCharacter : public AModularCharacter
 
 public:
 	ABaseCharacter();
+
+	UFUNCTION(BlueprintCallable, Category="Game|Character")
+	ABaseCharacterPlayerController* GetBaseCharacterPlayerController() const;
+
+	UFUNCTION(BlueprintCallable, Category = "Lyra|Character")
+	APlayerState* GetPlayerState() const;
+
+	// InitializeGameplayTags
 	
 	/**
 	 * Moves the character. Called for movement input
