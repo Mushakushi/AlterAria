@@ -2,19 +2,23 @@
 
 #pragma once
 
+#include "GameplayTagAssetInterface.h"
 #include "ModularCharacter.h"
 #include "Logging/LogMacros.h"
+
 #include "BaseCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
 class ABaseCharacterPlayerController; 
 struct FInputActionValue;
+struct FGameplayTagContainer;
+struct FGameplayTag;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ABaseCharacter : public AModularCharacter
+class ABaseCharacter : public AModularCharacter, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
 
@@ -35,7 +39,21 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Lyra|Character")
 	APlayerState* GetPlayerState() const;
 
-	// InitializeGameplayTags
+
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void UnPossessed() override;
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	void InitializeGameplayTags();
+	
+	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;
+	virtual bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override;
+	virtual bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
+	virtual bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override;
+	
+	virtual void FellOutOfWorld(const UDamageType& dmgType) override;
+
+	void OnDeathStarted(AActor*); 
 	
 	/**
 	 * Moves the character. Called for movement input
